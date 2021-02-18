@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e0f1e3"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/titlerelativelayout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="#b1c0b4"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/Login_title_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:fontFamily="@font/font"
+            android:gravity="center_vertical"
+            android:text="Vegetarian Radar"
+            android:textColor="#518d5d"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/background"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/Login_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/font2"
+            android:text="LOGIN"
+            android:textColor="#185524"
+            android:textSize="50sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/Login_username"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:alpha="0.8"
+            android:background="@drawable/edit_background"
+            android:hint="username"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textSize="25sp">
+        </EditText>
+
+        <EditText
+            android:id="@+id/Login_password"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:alpha="0.8"
+            android:background="@drawable/edit_background"
+            android:hint="password"
+            android:inputType="textPassword"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textSize="25sp">
+        </EditText>
+
+
+        <TextView
+            android:id="@+id/Login_word1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/font3"
+            android:paddingTop="20dp"
+            android:text="        Animals love me ,"
+            android:textColor="#185524"
+            android:textSize="20sp"
+            android:textStyle="italic|bold" />
+
+        <TextView
+            android:id="@+id/Login_word2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/font3"
+            android:paddingTop="6dp"
+            android:text="              Plants fear me"
+            android:textColor="#185524"
+            android:textSize="20sp"
+            android:textStyle="italic|bold" />
+
+        <Button
+            android:id="@+id/Login_OK"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/login_ready"
+            android:fontFamily="@font/font6"
+            android:gravity="center"
+            android:maxWidth="40dp"
+            android:minHeight="50dp"
+            android:onClick="onClick"
+            android:text="O  K"
+            android:textColor="#000000"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/Login_forget"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginBottom="0dp"
+            android:background="@drawable/ring"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="Forget Password"
+            android:textColor="#185524"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/Login_newCustomer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="90dp"
+            android:background="@drawable/ring"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="New Customer"
+            android:textColor="#185524"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/blank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingLeft="15dp"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+</LinearLayout>

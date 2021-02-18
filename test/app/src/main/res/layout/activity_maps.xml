@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="626dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="53dp"
+        tools:context="com.example.test.mapSystem.MapsActivity" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#e0f1e3"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnRestaurant"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/get_nearby_restaurant"
+            android:padding="10sp"
+            android:text="Vegetarian  Restaurants" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/main_bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/bottom_bar_course_btn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bottom_bar">
+
+            <TextView
+                android:id="@+id/bottom_bar_text_map"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="3dp"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="Map"
+                android:clickable="true"
+                android:onClick="onClick"
+                android:textColor="#666666"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/bottom_bar_image_map"
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:layout_above="@+id/bottom_bar_text_map"
+                android:clickable="true"
+                android:onClick="onClick"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="3dp"
+                android:src="@drawable/map2" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/bottom_bar_exercises_btn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bottom_bar">
+
+            <TextView
+                android:id="@+id/bottom_bar_text_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="3dp"
+                android:gravity="center"
+                android:singleLine="true"
+                android:clickable="true"
+                android:onClick="onClick"
+                android:text="List"
+                android:textColor="#666666"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/bottom_bar_image_list"
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:layout_above="@+id/bottom_bar_text_list"
+                android:layout_alignParentTop="true"
+                android:clickable="true"
+                android:onClick="onClick"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="3dp"
+                android:src="@drawable/list" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/bottom_bar_exercises_like"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bottom_bar">
+
+            <TextView
+                android:id="@+id/bottom_bar_text_like"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="3dp"
+                android:clickable="true"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:singleLine="true"
+                android:text="Like"
+                android:textColor="#666666"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/bottom_bar_image_like"
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:layout_above="@+id/bottom_bar_text_like"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="3dp"
+                android:clickable="true"
+                android:onClick="onClick"
+                android:src="@drawable/heart" />
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>
+

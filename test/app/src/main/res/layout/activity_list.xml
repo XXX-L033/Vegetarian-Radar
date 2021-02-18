@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#e0f1e3"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/show_rating"
+            android:layout_width="185dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/get_nearby_restaurant_2"
+            android:onClick="onClick"
+            android:padding="10sp"
+            android:text="Rating" />
+
+        <Button
+            android:id="@+id/show_distance"
+            android:layout_width="185dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/get_nearby_restaurant"
+            android:onClick="onClick"
+            android:padding="10sp"
+            android:text="Distance" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="514dp"
+        android:background="@drawable/background"
+        android:orientation="vertical">
+
+        <ListView
+            android:id="@android:id/list"
+            android:layout_width="match_parent"
+            android:layout_height="517dp"
+            android:layout_margin="0dp"
+            android:divider="#000"
+            android:dividerHeight="1dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/main_bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_alignParentBottom="true"
+
+        android:orientation="horizontal"
+        android:paddingTop="5dp">
+
+        <RelativeLayout
+            android:id="@+id/bottom_bar_course_btn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bottom_bar">
+
+            <TextView
+                android:id="@+id/bottom_bar_text_map"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="3dp"
+                android:clickable="true"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:singleLine="true"
+                android:text="Map"
+                android:textColor="#666666"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/bottom_bar_image_map"
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:layout_above="@+id/bottom_bar_text_map"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="3dp"
+                android:clickable="true"
+                android:onClick="onClick"
+                android:src="@drawable/map" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/bottom_bar_exercises_btn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bottom_bar">
+
+            <TextView
+                android:id="@+id/bottom_bar_text_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="3dp"
+                android:clickable="true"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:singleLine="true"
+                android:text="List"
+                android:textColor="#666666"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/bottom_bar_image_list"
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:layout_above="@+id/bottom_bar_text_list"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="3dp"
+                android:clickable="true"
+                android:onClick="onClick"
+                android:src="@drawable/list2" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/bottom_bar_exercises_like"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bottom_bar">
+
+            <TextView
+                android:id="@+id/bottom_bar_text_like"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="3dp"
+                android:clickable="true"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:singleLine="true"
+                android:text="Like"
+                android:textColor="#666666"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/bottom_bar_image_like"
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:layout_above="@+id/bottom_bar_text_like"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="3dp"
+                android:clickable="true"
+                android:onClick="onClick"
+                android:src="@drawable/heart" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>
