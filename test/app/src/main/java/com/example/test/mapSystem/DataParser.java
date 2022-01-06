@@ -24,6 +24,7 @@ public class DataParser {
         try {
             Log.d("Places", "parse");
             jsonObject = new JSONObject((String) jsonData);
+            //array of jsonObject [{}]
             jsonArray = jsonObject.getJSONArray("results");
         } catch (JSONException e) {
             Log.d("Places", "parse error");

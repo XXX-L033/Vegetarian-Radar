@@ -48,12 +48,16 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener,
         LocationListener, View.OnClickListener {
-
+    //place api
     public static final String NEARBY_SEARCH_URL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=%s&radius=%s&key=%s";
+    //API secure key
     public static final String KEY = "AIzaSyDJrAUAdMX80XmvBru6WbZ43KynzF1P-cE";
-    public static final String NEXT_PAGE_URL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?pagetoken=%s&key=%s";
+
+    //public static final String NEXT_PAGE_URL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?pagetoken=%s&key=%s";
     GoogleMap mGoogleMap;
+    //map fragment
     SupportMapFragment mapFrag;
+
     LocationRequest mLocationRequest;
     Location mLastLocation;
     public double longitude;
@@ -78,6 +82,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         getSupportActionBar().setTitle("Get Nearby Vege Restaurants");
 
+        //获取location
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
 
         mapFrag = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
@@ -121,12 +126,14 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         mLocationRequest.setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);
 
         //phone version checked valid
+        //手机版本
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (ContextCompat.checkSelfPermission(this, //check user permission
                     Manifest.permission.ACCESS_FINE_LOCATION) // the premission need to be checked
                     == PackageManager.PERMISSION_GRANTED) {
                 //Location Permission already granted
                 mFusedLocationClient.requestLocationUpdates(mLocationRequest, mLocationCallback, Looper.myLooper());
+                //获取地图位置，在进入时只能看到自己位置
                 mGoogleMap.setMyLocationEnabled(true);
             } else {
                 //Request Location Permission
@@ -138,7 +145,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
         Button btnRestaurant = findViewById(R.id.btnRestaurant);
         btnRestaurant.setOnClickListener(new View.OnClickListener() {
-            String Restaurant = "vege";
+            String Restaurant = "chinese";
 
             @Override
             public void onClick(View v) {
@@ -150,6 +157,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 DataTransfer[1] = url;
                 Log.d("onClick", url);
                 GetNearbyRes getNearbyPlacesData = new GetNearbyRes();
+                //手动调用 getNearbyRes - execute(),在主线程调用
                 getNearbyPlacesData.execute(DataTransfer);
                 Toast.makeText(MapsActivity.this, "Vegetarian Restaurants", Toast.LENGTH_LONG).show();
             }
@@ -179,7 +187,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA));
                 mCurrLocationMarker = mGoogleMap.addMarker(markerOptions);
 
-                //move camera
+                //move camera，scale level
                 mGoogleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentLocate, 15));
             }
         }
@@ -272,7 +280,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         StringBuilder googlePlacesUrl = new StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch/json?");
         googlePlacesUrl.append("location=" + latitude + "," + longitude);
         googlePlacesUrl.append("&radius=" + radius);
-        googlePlacesUrl.append("&type=" + nearbyPlace);
         googlePlacesUrl.append("&sensor=true");
         googlePlacesUrl.append("&key=" + "AIzaSyDJrAUAdMX80XmvBru6WbZ43KynzF1P-cE");
         Log.d("getUrl", googlePlacesUrl.toString());
@@ -284,6 +291,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         Log.d("onLocationChanged", "entered");
 
         mLastLocation = location;
+        //旧的删掉
         if (mCurrLocationMarker != null) {
             mCurrLocationMarker.remove();
         }
@@ -300,6 +308,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         //move map camera
         mGoogleMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+        //change the scale size
         mGoogleMap.animateCamera(CameraUpdateFactory.zoomTo(11));
         Toast.makeText(MapsActivity.this, "Your Current Location", Toast.LENGTH_LONG).show();
 

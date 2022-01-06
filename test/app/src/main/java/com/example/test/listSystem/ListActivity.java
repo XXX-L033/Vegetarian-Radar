@@ -28,6 +28,15 @@ public class ListActivity extends android.app.ListActivity implements View.OnCli
     public String location;
     public String name;
     public VegeRestaurant vr;
+    public ViewHolder holder;
+
+    static class ViewHolder{
+        TextView name;
+        TextView location;
+        TextView rating;
+        TextView open;
+        TextView distance;
+    }
 
 
     @Override
@@ -77,22 +86,24 @@ public class ListActivity extends android.app.ListActivity implements View.OnCli
                     v = convertView;
                 }
 
+                if(holder == null){
+                    holder = new ViewHolder();
+                    holder.name = (TextView) v.findViewById(R.id.vr_name);
+                    holder.location = (TextView) v.findViewById(R.id.vr_location);
+                    holder.rating = (TextView) v.findViewById(R.id.vr_rating);
+                    holder.open = (TextView) v.findViewById(R.id.vr_open);
+                    holder.distance = (TextView) v.findViewById(R.id.vr_dis);
+                }
+
                 //get all the data
 
                 vr = resList.get(position);
 
-                TextView name = (TextView) v.findViewById(R.id.vr_name);
-                TextView location = (TextView) v.findViewById(R.id.vr_location);
-                TextView rating = (TextView) v.findViewById(R.id.vr_rating);
-                TextView open = (TextView) v.findViewById(R.id.vr_open);
-                TextView distance = (TextView) v.findViewById(R.id.vr_dis);
-
-
-                name.setText(vr.getName());
-                location.setText(vr.getLocation());
-                rating.setText(vr.getRating());
-                open.setText(vr.getOpen());
-                distance.setText(vr.getDistance());
+                holder.name.setText(vr.getName());
+                holder.location.setText(vr.getLocation());
+                holder.rating.setText(vr.getRating());
+                holder.open.setText(vr.getOpen());
+                holder.distance.setText(vr.getDistance());
 
 
                 lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {

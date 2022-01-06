@@ -1,5 +1,6 @@
 package com.example.test.listSystem;
 
+import android.content.ContentResolver;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
@@ -156,6 +157,7 @@ public class DetailedInfo extends AppCompatActivity implements View.OnClickListe
             Uri uri = Uri.fromFile(file);
             intent.setData(uri);
             this.sendBroadcast(intent);
+
 
             Toast.makeText(this, "save successfully", Toast.LENGTH_SHORT).show();
         }

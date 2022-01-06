@@ -15,7 +15,7 @@ public class MapDirect {
     public void NaviGoogle(Context context, String latitude, String longitude) {
         if (isAvilible(context, "com.google.android.apps.maps")) {
             Uri gmmIntentUri = Uri.parse("google.navigation:q=" + latitude + "," + longitude + "&mode=w");
-            Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+            Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri); //intent-action 隐式跳转
             mapIntent.setPackage("com.google.android.apps.maps");
             mapIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity(mapIntent);

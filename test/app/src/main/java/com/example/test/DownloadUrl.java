@@ -13,11 +13,14 @@ public class DownloadUrl {
     public String readUrl(String strUrl) throws IOException {
         String data = "";
         InputStream iStream = null;
+        //初始
         HttpURLConnection urlConnection = null;
         try {
+            //转成URL类
             URL url = new URL(strUrl); //url class
 
             // Create an http connection to communicate with url
+            //打开URl链接
             urlConnection = (HttpURLConnection) url.openConnection();
 
             // Connect to url

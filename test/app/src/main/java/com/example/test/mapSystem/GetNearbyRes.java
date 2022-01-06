@@ -1,6 +1,7 @@
 package com.example.test.mapSystem;
 
 
+import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 
@@ -14,6 +15,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.util.HashMap;
 import java.util.List;
 
+//async task, <params, progress, result>
 public class GetNearbyRes extends AsyncTask<Object, String, String> { //map to show all the restaurants
     //background thread do the asyncho tasks
     String googlePlacesData;
@@ -22,6 +24,7 @@ public class GetNearbyRes extends AsyncTask<Object, String, String> { //map to s
     List<HashMap<String, String>> nearbyPlacesList;
 
     @Override
+    //string - 和result类型保持一致
     protected String doInBackground(Object... params) { //background threads do
         try {
             Log.d("GetNearbyPlacesData", "doInBackground entered");
@@ -64,6 +67,7 @@ public class GetNearbyRes extends AsyncTask<Object, String, String> { //map to s
             //move map camera
             mGoogleMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
             mGoogleMap.animateCamera(CameraUpdateFactory.zoomTo(13));
+
         }
     }
 
